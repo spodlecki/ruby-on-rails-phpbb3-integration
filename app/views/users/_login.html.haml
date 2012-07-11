@@ -1,0 +1,14 @@
+=form_tag '/phpBB_PATH/ucp.php?mode=login', :id => 'user-login-form', :method => 'post' do
+  %input{:type => "hidden", :name => "redirect", :value => request.fullpath}
+  %label{:for => "username"}
+    Username
+  %input{:type => "text", :name => "username", :id => "username"}
+  %p
+    Not a member?
+    %a{:href => '/phpBB_PATH/ucp.php?mode=register'} Register
+  %label{:for => "password"}
+    Password
+  %input{:type => "password", :name => "password", :id => "password"}
+  %p
+    %a{:href => '/phpBB_PATH/ucp.php?mode=sendpassword'} forgot password?
+  %input{:type => "submit", :name => 'login', :value => "Login"}
